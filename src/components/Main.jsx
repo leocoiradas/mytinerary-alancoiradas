@@ -8,7 +8,7 @@ function Main(){
     }]
     return(
         <main className="flex justify-center items-center min-h-[80vh]">
-            {welcome.map((component)=>(<Info title={component.title} desc={component.description} img={component.image} />))}
+            {welcome.map((component, i)=> (<Info key={i} title={component.title} desc={component.description} img={component.image} />))}
         </main>
     )
 };

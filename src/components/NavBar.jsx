@@ -1,11 +1,14 @@
 import React from "react";
 import Button from "./Button";
-function NavBar({isOpen}){
+function NavBar({isOpen}){ 
+
     return(
-        <nav className={`w-full justify-end gap-4 h-1/10 ${isOpen ? 'block' : 'hidden'} md:flex`}>
-            <Button name='Home' goTo='' />
-            <Button name='About Us' goTo='' />
-            <Button name='Contact' goTo='' />
+        <nav className={`${isOpen ? 'block' : 'hidden'} md:flex md:items-center md:w-auto`}>
+            <ul className={`flex flex-col md:flex-row md:gap-4  ${isOpen ? 'block md:flex' : 'hidden'} md:flex w-full`}>
+                <li><Button name='Home' goTo='' /></li>
+                <li><Button name='About Us' goTo='' /></li>
+                <li><Button name='Contact' goTo='' /></li>
+            </ul>
         </nav>
     );
 };
