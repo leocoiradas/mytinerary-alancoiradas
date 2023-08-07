@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "./NavBar";
 function HamburgerButton({onClick, isOpen}){
     return(
         <div className="flex flex-col w-full">
@@ -8,8 +7,6 @@ function HamburgerButton({onClick, isOpen}){
                 <div className={`line w-6 h-1 mb-1 bg-white ${isOpen ? 'opacity-0' : ''}`}></div>
                 <div className={`line w-6 h-1 mb-1 bg-white ${isOpen ? '-rotate-45' : ''}`}></div>
             </button>
-            
-            {isOpen && <NavBar isOpen={isOpen}/>}   
 
         </div>
     )

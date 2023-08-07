@@ -7,16 +7,18 @@ function Header(){
         setIsOpen(!isOpen)
     };
     return(
-        <header className="bg-slate-950 w-[75vw] min-h-[10vh] items-center p-3 flex justify-between">
-            <div className="w-1/2">
+        <header className="bg-slate-950 w-[75vw] min-h-[10vh] items-center p-3 flex justify-between flex-wrap">
+            <div className="flex-1">
                 <p className="text-base text-slate-100">My Tinerary</p>
             </div>
             <div className="md:hidden">
                 <HamburgerButton onClick={handleHamburgerButton} isOpen={isOpen} />
             </div>
-            <div className='hidden md:flex'>
+            <div className={`${isOpen ? 'block w-full p-3' : 'md:flex' }`}>
                 <NavBar isOpen={isOpen} />
             </div>
+            
+            
         </header>
     )
 }
