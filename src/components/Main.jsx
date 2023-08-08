@@ -1,5 +1,7 @@
 import React from "react";
 import Info from "./Info";
+import Carousel from "./Carousel";
+import cities from '../assets/data/Cities'
 function Main(){
     const welcome = [{
         title: 'Find the perfect destination',
@@ -7,8 +9,14 @@ function Main(){
         image: 'https://www.xtrafondos.com/wallpapers/montanas-con-nieve-en-el-bosque-3934.jpg'  
     }]
     return(
-        <main className="flex justify-center items-center min-h-[80vh]">
+        <main className="flex flex-col justify-center items-center min-h-[80vh] gap-6">
+            <section>
             {welcome.map((component, i)=> (<Info key={i} title={component.title} desc={component.description} img={component.image} />))}
+            </section>
+            <section>
+                <Carousel arr={cities} />
+            </section>
+
         </main>
     )
 };

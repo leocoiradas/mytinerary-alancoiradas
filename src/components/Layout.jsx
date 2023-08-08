@@ -5,9 +5,11 @@ import Main from "./Main";
 function Layout(){
     return (
         <>
-            <div className="flex p-5 justify-center">
-                <Header />
+            <div className="flex flex-col items-center p-5 justify-center">
+                
+                
             </div>
+            <Header />
             <Main />
             <Footer />
         </>
