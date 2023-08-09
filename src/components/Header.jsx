@@ -8,7 +8,7 @@ function Header() {
     };
     return (
         <header className="flex justify-center">
-            <div className="flex bg-slate-950 w-[75vw] min-h-[10vh] items-center p-3 justify-between flex-wrap">
+            <div className="flex bg-slate-950 w-[75vw] min-h-[10vh] items-center p-4 justify-between flex-wrap">
                 <div className="flex-1 md:flex-auto">
                     <p className="text-base text-slate-100">My Tinerary</p>
                 </div>
