@@ -12,13 +12,14 @@ function Carousel({arr}){
         nextSlide()
     };
     useEffect(() => {
-        const autoPages = setInterval(autoNextSlide, 5000);
+        const autoPages = setInterval(autoNextSlide, 10000);
         return () => {
             clearInterval(autoPages)
         }
     }, []);
     return (
-        <section className="w-[60vw]">
+        <section className=" flex  flex-col items-center justify-center w-[60vw] gap-4">
+            <h2 className="font-bold text-3xl mb-3">MY TINERARIES!!</h2>
             <div className="flex justify-center items-center flex-wrap gap-4">
                 {arr.slice(index, index + 4).map((element) => (<Card key={element.id} city={element.name} country={element.country} image={element.img} />))}
             </div>

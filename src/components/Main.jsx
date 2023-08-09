@@ -9,7 +9,7 @@ function Main(){
         image: 'https://www.xtrafondos.com/wallpapers/montanas-con-nieve-en-el-bosque-3934.jpg'  
     }]
     return(
-        <main className="flex flex-col justify-center items-center min-h-[80vh] gap-6">
+        <main className="flex flex-col justify-center items-center min-h-[80vh] p-5 gap-6">
             <section>
             {welcome.map((component, i)=> (<Info key={i} title={component.title} desc={component.description} img={component.image} />))}
             </section>
