@@ -1,5 +1,5 @@
 import React from "react";
-import Info from "./Info";
+import Info from "./Welcome";
 import Carousel from "./Carousel";
 import cities from '../assets/data/Cities'
 function Main(){
