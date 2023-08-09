@@ -11,7 +11,7 @@ function Main(){
     }]
     return(
         <main className="flex flex-col justify-center items-center min-h-[80vh] p-5 gap-12">
-            <section className="h-[90vh] flex justify-center items-center">
+            <section className="md:h-[90vh] flex justify-center items-center">
             {welcome.map((component, i)=> (<Info key={i} title={component.title} desc={component.description} slogan={component.slogan} img={component.image} />))}
             </section>
             <section>
