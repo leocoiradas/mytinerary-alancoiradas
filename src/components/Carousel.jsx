@@ -24,8 +24,8 @@ function Carousel({arr}){
                 {arr.slice(index, index + 4).map((element) => (<Card key={element.id} city={element.name} country={element.country} image={element.img} />))}
             </div>
             <div className="flex justify-center items-center flex-wrap gap-3 p-3">
-                <button className="p-3 rounded-md bg-blue-700 text-white" onClick={prevSlide}>Previous Page</button>
-                <button className="p-3 rounded-md bg-blue-700 text-white" onClick={nextSlide}>Next Page</button>
+                <button className="p-3 rounded-md bg-blue-700 text-white hover:bg-violet-700" onClick={prevSlide}>Previous Page</button>
+                <button className="p-3 rounded-md bg-blue-700 text-white hover:bg-violet-700" onClick={nextSlide}>Next Page</button>
             </div>
 
         </section>
