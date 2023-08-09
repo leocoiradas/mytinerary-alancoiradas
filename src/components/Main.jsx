@@ -6,7 +6,7 @@ function Main(){
     const welcome = [{
         title: 'Find the perfect destination',
         description: 'Our App will help you find the perfect path for your next trip. With an easy-to-use interface, and a host of itinerary options, planning your next trip has never been easier',
-        image: 'https://www.xtrafondos.com/wallpapers/montanas-con-nieve-en-el-bosque-3934.jpg'  
+        image: 'src/assets/images/default-image.jpg'  
     }]
     return(
         <main className="flex flex-col justify-center items-center min-h-[80vh] p-5 gap-6">
