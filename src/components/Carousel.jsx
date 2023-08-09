@@ -1,13 +1,22 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Card from "./Card";
 function Carousel({arr}){
     const [index, setIndex] = useState(0);
     const prevSlide= () => {
         setIndex((pastIndex) => (pastIndex - 4 > 0 ? pastIndex - 4 : arr.length - 4));
-    }
+    };
     const nextSlide = () => {
         setIndex((nextIndex) => (nextIndex + 4 < arr.length ? nextIndex + 4 : 0))
-    }
+    };
+    const autoNextSlide = () => {
+        nextSlide()
+    };
+    useEffect(() => {
+        const autoPages = setInterval(autoNextSlide, 5000);
+        return () => {
+            clearInterval(autoPages)
+        }
+    }, []);
     return (
         <section className="w-[60vw]">
             <div className="flex justify-center items-center flex-wrap gap-4">
