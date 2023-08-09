@@ -1,6 +1,9 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link as Anchor } from "react-router-dom";
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 function NavBar({ isOpen }) {
+    const userIcon = <FontAwesomeIcon icon={faUser} />;
     const links = [
         {
             title: 'Home',
@@ -13,7 +16,7 @@ function NavBar({ isOpen }) {
             to: '*'
         },
         {
-            title: 'User',
+            title: (<>{userIcon} <span className="ml-1">Login</span></>),
             isUser: true,
             to: '*'
         }
@@ -22,7 +25,7 @@ function NavBar({ isOpen }) {
     return (
         <nav className={`${isOpen ? 'block text-center' : 'hidden'} md:flex md:items-center md:w-auto`}>
             <ul className={`flex flex-col md:flex-row md:gap-4  ${isOpen ? 'block gap-2 md:flex' : 'hidden'} md:flex w-full`}>
-                {links.map((link) => (<li key={link.title}><Anchor className={`text-gray-50 ${link.isUser ? 'bg-cyan-500' : ''}`} to={link.to}>{link.title}</Anchor></li>))}
+                {links.map((link) => (<li key={link.title}><Anchor className={`p-3 rounded-lg hover: ${link.isUser ? 'bg-blue-700 text-zinc-100' : ''}`} to={link.to}>{link.title}</Anchor></li>))}
             </ul>
         </nav>
     );
