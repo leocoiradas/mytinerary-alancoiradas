@@ -21,9 +21,9 @@ function CityDetails() {
         <section className="min-h-[80vh] p-10 flex justify-center items-center">
             <article className="w-[85vw] flex justify-center items-center">
                 {cityDetails ? (
-                    <div>
-                        <h2>{cityDetails.cityName}</h2>
-                        <img src={cityDetails.img} alt={`City of ${cityDetails.cityName}`} />
+                    <div className="rounded-md flex flex-col justify-center items-center gap-3">
+                        <h2 className="text-4xl">{cityDetails.cityName}</h2>
+                        <img className="w-96 h-auto object-cover rounded-md"src={cityDetails.img} alt={`City of ${cityDetails.cityName}`} />
                         <p>Country: {cityDetails.country}</p>
                     </div>
                 ) : (
