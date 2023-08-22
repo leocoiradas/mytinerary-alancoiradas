@@ -44,9 +44,9 @@ function CityDetails() {
                     </p>
                     <p className="mb-4 text-2xl text-center text-neutral-600 dark:text-neutral-200 italic">{cityDetails.desc}</p>
                     <div className="flex flex-col gap-2 p-4">
-                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl">Tourist Spots: </b>{cityDetails.touristSpots}</p>
-                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl">Gastronomy: </b>{cityDetails.gastronomy}</p>
-                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl">Currency: </b>{cityDetails.currency}</p>
+                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl text-sky-500">Tourist Spots: </b>{cityDetails.touristSpots}</p>
+                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl text-sky-500">Gastronomy: </b>{cityDetails.gastronomy}</p>
+                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl text-sky-500">Currency: </b>{cityDetails.currency}</p>
                     </div>
                 </div>
             </div>
