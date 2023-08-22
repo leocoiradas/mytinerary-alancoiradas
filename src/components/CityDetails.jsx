@@ -34,23 +34,20 @@ function CityDetails() {
                         src={cityDetails.img}
                         alt={`Image of ${cityDetails.cityName} located in ${cityDetails.country}`} />
                 </div>
-                <div class="p-6">
+                <div class="p-6 flex flex-col justify-center items-center">
                     <h5
-                        className="mb-2 text-3xl font-sans font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                        className="mb-2 text-3xl text-center font-sans font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                         {cityDetails.cityName}
                     </h5>
-                    <p className="mb-4 text-md text-neutral-600 dark:text-neutral-200">
+                    <p className="mb-4 text-xl text-center text-neutral-600 dark:text-neutral-200">
                         {cityDetails.country}
                     </p>
-                    <p className="mb-2, text-2xl text-neutral-600 dark:text-neutral-200 italic">{cityDetails.desc}</p>
+                    <p className="mb-4, text-2xl text-center text-neutral-600 dark:text-neutral-200 italic">{cityDetails.desc}</p>
                     <div className="flex flex-col gap-2 p-4">
-                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b>Tourist Spots: </b>{cityDetails.touristSpots}</p>
-                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b>Gastronomy: </b>{cityDetails.gastronomy}</p>
-                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b>Currency: </b>{cityDetails.currency}</p>
+                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl">Tourist Spots: </b>{cityDetails.touristSpots}</p>
+                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl">Gastronomy: </b>{cityDetails.gastronomy}</p>
+                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl">Currency: </b>{cityDetails.currency}</p>
                     </div>
-                    <p class="text-base text-neutral-600 dark:text-neutral-200">
-                        <small class="text-neutral-500 dark:text-neutral-400">Last updated 3 mins ago</small>
-                    </p>
                 </div>
             </div>
                 ) : (
