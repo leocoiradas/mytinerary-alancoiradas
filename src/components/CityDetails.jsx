@@ -27,26 +27,26 @@ function CityDetails() {
                         <p>Country: {cityDetails.country}</p>
                     </div>*/ 
                     <div
-                class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-slate-900">
                 <div class="relative overflow-hidden bg-cover bg-no-repeat">
                     <img
-                        class="rounded-t-lg"
+                        className="rounded-t-lg object-cover w-full"
                         src={cityDetails.img}
                         alt={`Image of ${cityDetails.cityName} located in ${cityDetails.country}`} />
                 </div>
                 <div class="p-6">
                     <h5
-                        class="mb-2 text-3xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                        className="mb-2 text-3xl font-sans font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                         {cityDetails.cityName}
                     </h5>
-                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                    <p className="mb-4 text-md text-neutral-600 dark:text-neutral-200">
                         {cityDetails.country}
                     </p>
                     <p className="mb-2, text-2xl text-neutral-600 dark:text-neutral-200 italic">{cityDetails.desc}</p>
                     <div className="flex flex-col gap-2 p-4">
-                        <p className="text-lg text-neutral-600 dark:text-neutral-200"><b>Tourist Spots: </b>{cityDetails.touristSpots}</p>
-                        <p className="text-lg text-neutral-600 dark:text-neutral-200"><b>Gatronomy: </b>{cityDetails.gastronomy}</p>
-                        <p className="text-lg text-neutral-600 dark:text-neutral-200"><b>Currency: </b>{cityDetails.currency}</p>
+                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b>Tourist Spots: </b>{cityDetails.touristSpots}</p>
+                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b>Gastronomy: </b>{cityDetails.gastronomy}</p>
+                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b>Currency: </b>{cityDetails.currency}</p>
                     </div>
                     <p class="text-base text-neutral-600 dark:text-neutral-200">
                         <small class="text-neutral-500 dark:text-neutral-400">Last updated 3 mins ago</small>
