@@ -13,7 +13,7 @@ function NavBar({ isOpen }) {
         {
             title: 'Cities',
             isUser: false,
-            to: '*'
+            to: '/cities'
         },
         {
             title: (<>{userIcon} <span className="ml-1">Login</span></>),
