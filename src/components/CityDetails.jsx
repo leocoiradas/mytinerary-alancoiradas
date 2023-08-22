@@ -36,12 +36,18 @@ function CityDetails() {
                 </div>
                 <div class="p-6">
                     <h5
-                        class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                        class="mb-2 text-3xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                         {cityDetails.cityName}
                     </h5>
                     <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                         {cityDetails.country}
                     </p>
+                    <p className="mb-2, text-2xl text-neutral-600 dark:text-neutral-200 italic">{cityDetails.desc}</p>
+                    <div className="flex flex-col gap-2 p-4">
+                        <p className="text-lg text-neutral-600 dark:text-neutral-200"><b>Tourist Spots: </b>{cityDetails.touristSpots}</p>
+                        <p className="text-lg text-neutral-600 dark:text-neutral-200"><b>Gatronomy: </b>{cityDetails.gastronomy}</p>
+                        <p className="text-lg text-neutral-600 dark:text-neutral-200"><b>Currency: </b>{cityDetails.currency}</p>
+                    </div>
                     <p class="text-base text-neutral-600 dark:text-neutral-200">
                         <small class="text-neutral-500 dark:text-neutral-400">Last updated 3 mins ago</small>
                     </p>
