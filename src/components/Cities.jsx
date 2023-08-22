@@ -23,11 +23,12 @@ function Cities() {
         }
     }
     return (
-        <main className='flex flex-col justify-center items-center min-h-[80vh]'>
-            <input onChange={handleInputChange} className='border-2 rounded-md' type='text' placeholder='Write the city name here.' />
-            <section className='flex flex-col items-center justify-center p-3'>
-                <h2>Cities</h2>
-                <article>
+        <main className='flex flex-col justify-center items-center min-h-[80vh] w-full pt-10'>
+           <h2 className='text-3xl'>Cities</h2>
+            <section className='flex flex-col items-center justify-center p-3 gap-5'>
+            <input onChange={handleInputChange} className='border-2 rounded-md py-1 px-2 w-96' type='text' placeholder='Write the city name here.' />
+                
+                <article className='flex gap-5 flex-wrap justify-center'>
                     {cities?.map( (city) => {
                         return(
                                 <Link key={city._id} to={`/cities/${city._id}`}>
