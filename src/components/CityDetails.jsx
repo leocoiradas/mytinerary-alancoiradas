@@ -19,7 +19,7 @@ function CityDetails() {
     console.log(cityDetails)
     return (
         <section className="min-h-[80vh] p-10 flex justify-center items-center">
-            <article className="w-[85vw] flex flex-col justify-center items-center gap-6">
+            <article className="w-[75vw] flex flex-col justify-center items-center gap-6">
                 {cityDetails ? (
                     /*<div className="rounded-md flex flex-col justify-center items-center gap-3 m-4 border-2 border-neutral-950 p-4">
                         <h2 className="text-4xl">{cityDetails.cityName}</h2>
@@ -28,13 +28,13 @@ function CityDetails() {
                     </div>*/ 
                     <div
                 className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-slate-900">
-                <div class="relative overflow-hidden bg-cover bg-no-repeat">
+                <div className="relative overflow-hidden bg-cover bg-no-repeat">
                     <img
                         className="rounded-t-lg object-cover w-full"
                         src={cityDetails.img}
                         alt={`Image of ${cityDetails.cityName} located in ${cityDetails.country}`} />
                 </div>
-                <div class="p-6 flex flex-col justify-center items-center">
+                <div className="p-6 flex flex-col justify-center items-center">
                     <h5
                         className="mb-2 text-3xl text-center font-sans font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                         {cityDetails.cityName}
@@ -42,7 +42,7 @@ function CityDetails() {
                     <p className="mb-4 text-xl text-center text-neutral-600 dark:text-neutral-200">
                         {cityDetails.country}
                     </p>
-                    <p className="mb-4, text-2xl text-center text-neutral-600 dark:text-neutral-200 italic">{cityDetails.desc}</p>
+                    <p className="mb-4 text-2xl text-center text-neutral-600 dark:text-neutral-200 italic">{cityDetails.desc}</p>
                     <div className="flex flex-col gap-2 p-4">
                         <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl">Tourist Spots: </b>{cityDetails.touristSpots}</p>
                         <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl">Gastronomy: </b>{cityDetails.gastronomy}</p>
