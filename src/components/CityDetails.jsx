@@ -25,31 +25,31 @@ function CityDetails() {
                         <h2 className="text-4xl">{cityDetails.cityName}</h2>
                         <img className="w-96 h-auto object-cover rounded-md" src={cityDetails.img} alt={`City of ${cityDetails.cityName}`} />
                         <p>Country: {cityDetails.country}</p>
-                    </div>*/ 
+                    </div>*/
                     <div
-                className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-slate-900">
-                <div className="relative overflow-hidden bg-cover bg-no-repeat">
-                    <img
-                        className="rounded-t-lg object-cover w-full"
-                        src={cityDetails.img}
-                        alt={`Image of ${cityDetails.cityName} located in ${cityDetails.country}`} />
-                </div>
-                <div className="p-6 flex flex-col justify-center items-center">
-                    <h5
-                        className="mb-2 text-3xl text-center font-sans font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                        {cityDetails.cityName}
-                    </h5>
-                    <p className="mb-4 text-xl text-center text-neutral-600 dark:text-neutral-200">
-                        {cityDetails.country}
-                    </p>
-                    <p className="mb-4 text-2xl text-center text-neutral-600 dark:text-neutral-200 italic">{cityDetails.desc}</p>
-                    <div className="flex flex-col gap-2 p-4">
-                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl text-sky-500">Tourist Spots: </b>{cityDetails.touristSpots}</p>
-                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl text-sky-500">Gastronomy: </b>{cityDetails.gastronomy}</p>
-                        <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl text-sky-500">Currency: </b>{cityDetails.currency}</p>
+                        className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-slate-900">
+                        <div className="relative overflow-hidden bg-cover bg-no-repeat">
+                            <img
+                                className="rounded-t-lg object-cover w-full"
+                                src={cityDetails.img}
+                                alt={`Image of ${cityDetails.cityName} located in ${cityDetails.country}`} />
+                        </div>
+                        <div className="p-6 flex flex-col justify-center items-center">
+                            <h5
+                                className="mb-2 text-3xl text-center font-sans font-medium leading-tight text-neutral-800 dark:text-neutral-50">
+                                {cityDetails.cityName}
+                            </h5>
+                            <p className="mb-4 text-xl text-center text-neutral-600 dark:text-neutral-200">
+                                {cityDetails.country}
+                            </p>
+                            <p className="mb-4 text-2xl text-center text-neutral-600 dark:text-neutral-200 italic">{cityDetails.desc}</p>
+                            <div className="flex flex-col gap-2 p-4">
+                                <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl text-sky-500">Tourist Spots: </b>{cityDetails.touristSpots}</p>
+                                <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl text-sky-500">Gastronomy: </b>{cityDetails.gastronomy}</p>
+                                <p className="text-lg font-mono text-neutral-600 dark:text-neutral-200"><b className="text-xl text-sky-500">Currency: </b>{cityDetails.currency}</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
                 ) : (
                     <p>Loading...</p>
                 )}
@@ -61,7 +61,7 @@ function CityDetails() {
                 </div>
 
             </article>
-            
+
         </section>
 
     )
