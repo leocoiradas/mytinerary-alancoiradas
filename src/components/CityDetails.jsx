@@ -5,37 +5,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import details_action from "../store/actions/detailsAction";
 
 function CityDetails() {
+
     const { id } = useParams()
     const dispatch = useDispatch()
     const cityDetails = useSelector((store) => store.detailsReducer.cityDetails)
-    const handleButton = () => {
-        return (<p className="md:text-2xl font-mono text-neutral-600 dark:text-neutral-200">Under Construction</p>)
-    }
-    // const [cityDetails, setCityDetails] = useState();
     useEffect(() => {
         dispatch(details_action({
             id: id
         }))
-        /* axios.get(`http://localhost:7000/api/cities/${id}`)
-             .then((response) => {
-                 setCityDetails(response.data.eventById);
-             })
-             .catch((error) => {
-                 console.log(error);
-             });*/
-
-
     }, []);
-    console.log(cityDetails)
+
     return (
         <section className="min-h-[80vh] p-10 flex justify-center items-center">
             <article className="w-[75vw] flex flex-col justify-center items-center gap-6">
                 {cityDetails ? (
-                    /*<div className="rounded-md flex flex-col justify-center items-center gap-3 m-4 border-2 border-neutral-950 p-4">
-                        <h2 className="text-4xl">{cityDetails.cityName}</h2>
-                        <img className="w-96 h-auto object-cover rounded-md" src={cityDetails.img} alt={`City of ${cityDetails.cityName}`} />
-                        <p>Country: {cityDetails.country}</p>
-                    </div>*/
                     <div className="flex flex-col gap-8">
                         <div
                             className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-slate-900">
@@ -65,7 +48,7 @@ function CityDetails() {
                             <h3 className="text-3xl font-sans font-medium leading-tight">Itineraries</h3>
                             {cityDetails.itineraries.length === 0 ? (
                                 <p className="text-xl text-black">There's no itineraries for this city</p>
-                            ): ( cityDetails.itineraries.map((element, index) => {
+                            ) : ( cityDetails.itineraries.map((element, index) => {
                                 return (
                                     <div key={index} className="bg-slate-900 p-4 w-full flex flex-wrap rounded-md ">
                                         <div className="w-full md:w-1/3 flex flex-col items-center gap-3">
