@@ -1,15 +1,16 @@
 import { createReducer } from "@reduxjs/toolkit";
-import details_action from "../actions/detailsAction";
+import { get_details } from "../actions/detailsAction";
+
 const initialState = {
     cityDetails: []
 }
 
 const detailsReducer = createReducer(initialState,
     (builder) => builder
-        .addCase(details_action.fulfilled, (state, action) => {
+        .addCase(get_details.fulfilled, (state, action) => {
             return {
                 ...state,
-                cityDetails: action.payload.cityDetails
+                cityDetails: action.payload.details
             }
         }))
 

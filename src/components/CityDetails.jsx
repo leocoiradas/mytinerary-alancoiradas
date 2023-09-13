@@ -1,17 +1,17 @@
 import { useParams, Link } from "react-router-dom";
 import React, { useEffect } from "react";
-
 import { useDispatch, useSelector } from 'react-redux';
-import details_action from "../store/actions/detailsAction";
+import { get_details } from "../store/actions/detailsAction";
 
 function CityDetails() {
-
-    const { id } = useParams()
     const dispatch = useDispatch()
+    const { id } = useParams()
+    
     const cityDetails = useSelector((store) => store.detailsReducer.cityDetails)
+    console.log(cityDetails)
     useEffect(() => {
-        dispatch(details_action({
-            id: id
+        dispatch(get_details({
+            cityId: id
         }))
     }, []);
 
