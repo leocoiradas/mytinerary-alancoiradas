@@ -4,7 +4,7 @@ import axios from "axios";
 export const get_cities = createAsyncThunk('get_cities', async () => {
     try {
         const response = await axios.get('http://localhost:7000/api/cities')
-        
+        console.log(response.data.cityById)
         return {
             cities: response.data.cities
         }
