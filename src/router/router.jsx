@@ -3,6 +3,9 @@ import Layout from "../pages/Layout";
 import Main from "../components/Main";
 import Cities from "../components/Cities";
 import CityDetails from "../components/CityDetails";
+import SignIn from "../components/SignIn";
+import SignUp from "../components/SignUp";
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -19,6 +22,14 @@ const router = createBrowserRouter([
             {
                 path: '/cities/:id',
                 element: <CityDetails />
+            },
+            {
+                path: '/signin',
+                element: <SignIn />
+            },
+            {
+                path: '/signup',
+                element: <SignUp />
             },
             {
                 path: '*',
