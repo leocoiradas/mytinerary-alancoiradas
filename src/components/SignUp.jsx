@@ -10,11 +10,11 @@ function SignUp() {
                 <form className=" flex flex-col justify-center items-start gap-3 p-3 w-full">
                 <div className="flex flex-col gap-2 w-full">
                         <label for="user" className="md:text-lg">User: </label>
-                        <input type="text" name="user"  id="user" className="rounded-md border-2 border-black w-full text-lg  p-1" />
+                        <input type="text" name="user"  id="user" placeholder="username" className="rounded-md border-2 border-black w-full text-lg  p-1" />
                     </div>
                     <div className="flex flex-col gap-2 w-full">
                         <label for="email" className="md:text-lg">Email: </label>
-                        <input type="email" name="email"  id="email" className="rounded-md border-2 border-black w-full text-lg  p-1" />
+                        <input type="email" name="email"  id="email" placeholder="emailexample@gmail.com" className="rounded-md border-2 border-black w-full text-lg  p-1" />
                     </div>
                     <div className="flex flex-col gap-2 w-full">
                         <label for="password" className="md:text-lg">Password: </label>
