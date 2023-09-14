@@ -18,7 +18,7 @@ function NavBar({ isOpen }) {
         {
             title: (<>{userIcon} <span className="ml-1">Login</span></>),
             isUser: true,
-            to: '*'
+            to: '/signin'
         }
     ]
 
