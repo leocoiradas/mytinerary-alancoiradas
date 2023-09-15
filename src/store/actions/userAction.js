@@ -14,9 +14,6 @@ export const user_photo = createAction('user_photo', (obj) => {
 export const user_login = createAsyncThunk('user_login', async (obj) => {
     try {
         const { data } = await axios.post('http://localhost:7000/api/auth/signin', obj.data);
-        console.log(data);
-        console.log(data.token)
-        console.log(data.user)
         localStorage.setItem('token', data.token)
         localStorage.setItem('user', JSON.stringify(data.user))
 
@@ -35,7 +32,6 @@ export const user_login = createAsyncThunk('user_login', async (obj) => {
 export const user_signup = createAsyncThunk('user_signup', async (obj) => {
     try {
         const response = await axios.post('http://localhost:7000/api/auth/signup', obj.data);
-        console.log(response)
         return response.data;
     } catch (error) {
         console.error("Error en el registro:", error);

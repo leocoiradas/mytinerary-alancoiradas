@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { user_login } from "../store/actions/userAction";
+import { GoogleSignin } from "./GoogleSignIn";
 
 function SignIn() {
     const [formData, setFormData] = useState({
@@ -18,7 +19,6 @@ function SignIn() {
             [event.target.name]: event.target.value
         })
     }
-    console.log(formData)
 
     const handleSignIn = async (event) => {
         event.preventDefault();
@@ -54,7 +54,7 @@ function SignIn() {
                         Sign in
                     </button>
                 </form>
-
+                <GoogleSignin />
                 <p className="text-xl">You don't have an account? <Link to="/signup" className="text-blue-600">Sign Up</Link></p>
             </section>
         </main>
