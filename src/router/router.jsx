@@ -5,6 +5,7 @@ import Cities from "../components/Cities";
 import CityDetails from "../components/CityDetails";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
+import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
     {
@@ -25,7 +26,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/signin',
-                element: <SignIn />
+                element: <ProtectedRoute path='/'>
+                            <SignIn />
+                        </ProtectedRoute>
             },
             {
                 path: '/signup',
