@@ -24,9 +24,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/cities/:id',
-                element: <ProtectedRoute path='/restricted'>
-                            <CityDetails />
-                        </ProtectedRoute>
+                element: <CityDetails />
+                        
             },
             {
                 path: '/signin',
