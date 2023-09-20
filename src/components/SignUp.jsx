@@ -4,6 +4,7 @@ import { countries } from "../assets/data/countries";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { user_signup } from "../store/actions/userAction";
+import { GoogleSignin } from "./GoogleSignIn";
 
 function SignUp() {
     const [formData, setFormData] = useState({
@@ -71,6 +72,7 @@ function SignUp() {
                         Sign up
                     </button>
                 </form>
+                <GoogleSignin />
                 <p className="text-xl">Already have an account? <Link to="/signin" className="text-blue-600">Sign In</Link></p>
             </section>
         </main>
