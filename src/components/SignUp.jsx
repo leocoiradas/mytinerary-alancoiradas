@@ -40,7 +40,7 @@ function SignUp() {
         <main className="min-h-[80vh]  flex justify-center items-center ">
             <section className="flex flex-col justify-center items-center rounded-md border-2 border-black w-[75vw] lg:w-[35vw] gap-4 p-4">
                 <h2 className="text-2xl font-sans font-bold">Sign Up</h2>
-                <p className="text-xl text-center">Sign up to create an account and enjoy all the stuff our platflorm can offer.</p>
+                <p className="text-xl text-center">Sign up to create an account and enjoy all the stuff our platflorm have to offer.</p>
                 <form className=" flex flex-col justify-center items-start gap-3 p-3 w-full">
                 <div className="flex flex-col gap-2 w-full">
                         <label htmlFor="user" className="md:text-lg">User: </label>
