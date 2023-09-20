@@ -19,12 +19,12 @@ export const GoogleSignin = () => {
         const userResponse = await axios.post('http://localhost:7000/api/auth/google', data);
         dispatch(google_signin(data))
         //console.log(userResponse.data.response.user)
-       // console.log(userResponse)
+        // console.log(userResponse)
     }
     const handleGoogleSignIn = async (event) => {
         event.preventDefault();
         try {
-           // console.log('Token recibido:', response.credential);
+            // console.log('Token recibido:', response.credential);
             dispatch(google_signin({
                 token_id: response.credential // Asegúrate de pasar el token_id
             }))
@@ -33,7 +33,7 @@ export const GoogleSignin = () => {
         }
     }
     useEffect(() => {
-        window.onload = function () {
+        /*window.onload = function () {
             window.google.accounts.id.initialize({
                 client_id: "280288090319-ih52c4vv3s1irphnm68ra1a81t3bfo8g.apps.googleusercontent.com",
                 callback: handleCredentialResponse
@@ -47,7 +47,29 @@ export const GoogleSignin = () => {
                 // Llama a la acción google_signin
                 dispatch(google_signin({}));
             };
+        }*/
+        const initializeGoogleSignIn = async () => {
+            await new Promise((resolve) => {
+                window.google.accounts.id.initialize({
+                    client_id: "280288090319-ih52c4vv3s1irphnm68ra1a81t3bfo8g.apps.googleusercontent.com",
+                    callback: handleCredentialResponse,
+                    // Otras opciones de configuración aquí
+                });
+                resolve();
+            });
+
+            window.google.accounts.id.renderButton(
+                googleButton.current,
+                { type: 'standard', shape: 'pill', theme: "filled_blue", size: "large", text: 'signin_with' }
+            );
+
+            googleButton.current.onclick = () => {
+                // Llama a la acción google_signin
+                dispatch(google_signin({}));
+            };
+            
         }
+        initializeGoogleSignIn();
     }, [dispatch])
 
     return (
