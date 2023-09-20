@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { google_signin, user_login } from "../store/actions/userAction";
+import { user_login } from "../store/actions/userAction";
 import { GoogleSignin } from "./GoogleSignIn";
 
 function SignIn() {
