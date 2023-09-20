@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 function Header() {
     const defaultPhoto = 'https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg';
     const user = useSelector(store => store.userReducer.user);
-    console.log(user)
+    //console.log(`User data is: ${user}`)
     const [isOpen, setIsOpen] = useState(false);
     const handleHamburgerButton = () => {
         setIsOpen(!isOpen)

@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { user_photo, user_login, user_token, user_logout, user_signup } from '../actions/userAction';
+import { user_photo, user_login, user_token, user_logout, user_signup, google_signin } from '../actions/userAction';
 
 
 const initialState = {
@@ -18,6 +18,13 @@ const userReducer = createReducer(initialState,
         })
         .addCase(user_login.fulfilled, (state, action) => {
 
+            return {
+                ...state,
+                user: action.payload.user,
+                token: action.payload.token
+            }
+        })
+        .addCase(google_signin.fulfilled, (state, action) => {
             return {
                 ...state,
                 user: action.payload.user,
