@@ -5,7 +5,6 @@ import Cities from "../components/Cities";
 import CityDetails from "../components/CityDetails";
 import SignIn from "../components/SignIn";
 import SignUp from "../components/SignUp";
-import ProtectedRoute from "./ProtectedRoute";
 import Restricted from "../components/Restricted";
 import RedirectUser  from "./RedirectUser";
 
