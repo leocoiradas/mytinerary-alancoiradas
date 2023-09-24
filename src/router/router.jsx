@@ -3,6 +3,11 @@ import Layout from "../pages/Layout";
 import Main from "../components/Main";
 import Cities from "../components/Cities";
 import CityDetails from "../components/CityDetails";
+import SignIn from "../components/SignIn";
+import SignUp from "../components/SignUp";
+import Restricted from "../components/Restricted";
+import RedirectUser  from "./RedirectUser";
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -19,6 +24,24 @@ const router = createBrowserRouter([
             {
                 path: '/cities/:id',
                 element: <CityDetails />
+                        
+            },
+            {
+                path: '/signin',
+                element: <RedirectUser path='/'>
+                            <SignIn />
+                        </RedirectUser>
+                        
+            },
+            {
+                path: '/signup',
+                element: <RedirectUser path='/'>
+                            <SignUp />
+                        </RedirectUser>
+            },
+            {
+                path: '/restricted',
+                element: <Restricted />
             },
             {
                 path: '*',
