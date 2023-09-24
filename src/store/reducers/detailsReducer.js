@@ -1,6 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
 import { get_details } from "../actions/detailsAction";
-
 const initialState = {
     cityDetails: []
 }

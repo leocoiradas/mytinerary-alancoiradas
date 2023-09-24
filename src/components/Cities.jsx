@@ -7,6 +7,7 @@ import { filter_cities, get_cities } from '../store/actions/citiesAction';
 
 function Cities() {
     const cities = useSelector((store) => store.citiesReducer.cities)
+    console.log(cities)
     const dispatch = useDispatch()
     let inputSearch = useRef()
     useEffect(() => {
