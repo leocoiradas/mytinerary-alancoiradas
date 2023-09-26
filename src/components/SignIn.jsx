@@ -32,8 +32,8 @@ function SignIn() {
     }
 
     return (
-        <main className="min-h-[80vh]  flex justify-center items-center ">
-            <section className="flex flex-col justify-center items-center rounded-md border-2 border-black w-[75vw] md:w-[35vw]  gap-6 p-4">
+        <main className="min-h-[80vh]  flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500">
+            <section className="flex flex-col justify-center items-center rounded-md border-2 border-black w-[75vw] md:w-[35vw] backdrop-blur-md bg-white/60 gap-6 p-4">
                 <h2 className="text-2xl font-sans font-bold">Sign In</h2>
                 <p className="text-xl text-center">Sign in to watch all the content in our website.</p>
                 <form onSubmit={handleSignIn} action="" className=" flex flex-col justify-center items-start gap-5 p-3 w-full">
