@@ -18,12 +18,12 @@ function Carousel({arr}){
         }
     }, []);
     return (
-        <section className=" flex  flex-col items-center justify-center md:w-[60vw] gap-4">
+        <section className=" flex  flex-col items-center justify-center  gap-4">
             <h2 className="font-bold text-2xl md:text-3xl mb-3">MY TINERARIES!!</h2>
             <div className="flex justify-center items-center flex-wrap gap-4">
                 {arr.slice(index, index + 4).map((element) => (<Card key={element.id} city={element.name} country={element.country} image={element.img} />))}
             </div>
-            <div className="flex justify-center items-center flex-wrap gap-3 p-3">
+            <div className="flex justify-center items-center flex-wrap gap-3 md:gap-6 p-3">
                 <button className="p-3 rounded-md bg-blue-700 text-white hover:bg-violet-700" onClick={prevSlide}>Previous Page</button>
                 <button className="p-3 rounded-md bg-blue-700 text-white hover:bg-violet-700" onClick={nextSlide}>Next Page</button>
             </div>
