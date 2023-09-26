@@ -17,7 +17,7 @@ function CityDetails() {
     console.log(cityDetails)
 
     return (
-        <section className="min-h-[80vh] p-10 flex justify-center items-center">
+        <section className="min-h-[80vh] p-10 flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500">
             <article className="w-[75vw] flex flex-col justify-center items-center gap-6">
                 {cityDetails ? (
                     <div className="flex flex-col gap-8">
