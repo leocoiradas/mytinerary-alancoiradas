@@ -13,7 +13,7 @@ function Header() {
     };
     return (
         <header className="flex justify-center">
-            <div className="flex w-[75vw] min-h-[10vh] items-center p-4 justify-between flex-wrap">
+            <div className="flex w-screen min-h-[10vh] items-center p-4 justify-between flex-wrap bg-teal-300">
                 <div className="flex-1 md:flex-auto">
                     <p className=" font-bold text-2xl">My Tinerary</p>
                 </div>
