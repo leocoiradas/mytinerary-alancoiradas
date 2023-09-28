@@ -52,8 +52,8 @@ function CityDetails() {
                                     cityDetails.itineraries.map((element, index) => {
                                         return (
                                             <div key={index} className="bg-slate-900 p-4 w-full flex flex-wrap rounded-md ">
-                                                <div className="w-full md:w-1/3 flex flex-col items-center gap-3">
-                                                    <div className="w-24 h-24 md:w-full md:h-full mx-auto">
+                                                <div className="w-full md:w-1/3 flex flex-col items-center gap-3 p-4">
+                                                    <div className="w-24 h-24 md:w-36 md:h-36 mx-auto">
                                                         <img src={element.user.image} className="rounded-full md:rounded object-cover w-full h-full" alt={element.user.user} />
                                                     </div>
                                                     <p className="text-lg text-center font-mono text-neutral-600 dark:text-neutral-200">{element.user.user}</p>
