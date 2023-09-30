@@ -4,16 +4,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { get_details } from "../store/actions/detailsAction";
 
 function CityDetails() {
-    
+
     const dispatch = useDispatch()
     const { id } = useParams()
-    const cityDetails = useSelector((store) => store.detailsReducer.cityDetails)
+    const cityDetails = useSelector((store) => store.detailsReducer.cityDetails);
+    const user = useSelector(store => store.userReducer.user);
     useEffect(() => {
         dispatch(get_details({
-           cityId: id
-       }))
-   }, [dispatch, id]);
-    
+            cityId: id
+        }))
+    }, [dispatch, id]);
+
     console.log(cityDetails)
 
     return (
@@ -63,11 +64,11 @@ function CityDetails() {
                                                     <p className="md:text-2xl font-mono text-neutral-600 dark:text-neutral-200"><b className="text-2xl text-sky-500">Price:</b> {element.price}</p>
                                                     <div className="flex gap-3 mb-5">
                                                         {element.hashtags.map((hashtag) => {
-                                                            return(<p className="md:text-2xl font-mono text-neutral-600 dark:text-neutral-200">{hashtag} </p>)
+                                                            return (<p className="md:text-2xl font-mono text-neutral-600 dark:text-neutral-200">{hashtag} </p>)
                                                         })}
                                                     </div>
                                                     <div>
-                                                        <Link to='*' className="btn bg-cyan-400 text-center hover:bg-blue-800 hover:text-white text-center p-3 rounded-md text-md">View More</Link>
+                                                        <Link to='*' className="btn bg-cyan-400 text-center hover:bg-blue-800 hover:text-white p-3 rounded-md text-md">View More</Link>
                                                     </div>
                                                 </div>
                                             </div>
@@ -79,6 +80,29 @@ function CityDetails() {
                             ) : (
                                 <p>Loading itineraries</p>
                             )}
+                            {user ?
+                                <section className="md:w-[75vw] flex flex-wrap justify-center items-center bg-slate-800 rounded-md border-2 border-black p-5 gap-5">
+                                    <div className="  flex flex-1 flex-col justify-center items-center gap-5">
+                                        <div className="w-24 h-24 md:w-36 md:h-36">
+                                            <img src={user.image} className="rounded-full md:rounded object-cover w-full h-full" />
+                                        </div>
+                                        <p className="text-center text-white font-mono text-xl">{user.user}</p>
+                                    </div>
+                                    <form action="" className="flex flex-col justify-center items-center w-full md:w-2/3 gap-3">
+                                    <h4 className="text-center text-white text-xl font-mono">Create an itinerary</h4>
+                                        <div className="flex flex-col gap-3 justify-center items-start p-2 w-full">
+                                            <label htmlFor="title" className="items-start text-white text-xl font-mono">Title</label>
+                                            <input type="text" className=" w-full p-2 rounded-md" name="title" id="title" placeholder="Insert the title of the itinerary here." />
+                                            <label htmlFor="desc" className="text-start text-white text-xl font-mono">Description</label>
+                                            <textarea className="w-full min-h-[12rem] p-2 rounded-md" name="desc" id="desc" placeholder="Insert the description of the itinerary here." />
+                                            
+                                            
+                                            <button type="submit" className="bg-cyan-400 hover:bg-purple-400 p-3 rounded-md">Send Itinerary</button>
+                                        </div>
+
+                                    </form>
+                                </section>
+                                : null}
                         </div>
                     </div>
                 ) : (
