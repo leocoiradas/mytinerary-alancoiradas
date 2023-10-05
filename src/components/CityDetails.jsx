@@ -19,7 +19,7 @@ function CityDetails() {
         title: "",
         desc: "",
         price: "",
-        duration: "",
+        duration: 0,
         hashtag: []
 
     })
@@ -130,7 +130,10 @@ function CityDetails() {
                                                 <button onClick={handlePriceNegative} className="w-24 p-2 bg-cyan-400 rounded-md hover:bg-purple-400">-1 💵</button>
                                                 <input type="text" id="price" value={money} className=" w-full p-2 rounded-md" minLength="1" maxLength="5" readonly="readonly" required />
                                             </div>
-
+                                            <label htmlFor="duration" className="items-start text-white text-xl font-mono">Duration</label>
+                                            <input type="number" id="duration" className=" w-full p-2 rounded-md" required />
+                                            <label htmlFor="hashtags" className="items-start text-white text-xl font-mono">Hashtags</label>
+                                            <input type="text" id="hashtags" className=" w-full p-2 rounded-md" required />
                                             <button type="submit" className="bg-cyan-400 hover:bg-purple-400 p-3 rounded-md">Send Itinerary</button>
                                         </div>
 
