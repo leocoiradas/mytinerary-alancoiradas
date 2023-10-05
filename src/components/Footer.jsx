@@ -2,9 +2,9 @@ import React from "react";
 function Footer (){
     
     return(
-        <footer className="bg-blue-500 p-3 min-h-[10vh] w-full flex">
-            <div className="flex flex-col flex-1 items-start text-white">
-                <p>Developed by Alan Coiradas</p>
+        <footer className="bg-blue-500 p-3 min-h-[10vh] w-full flex flex-col md:flex-row">
+            <div className="flex md:flex-col flex-1 items-start text-white gap-2">
+                <p>Developed by Alan Coiradas.</p>
                 <p>All rights reserved.</p>
             </div>
             <div className="flex flex-col items-start text-white">
