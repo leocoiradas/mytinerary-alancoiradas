@@ -14,7 +14,10 @@ function CityDetails() {
             cityId: id
         }))
     }, [dispatch, id]);
+
     const [money, setMoney] = useState("💵");
+    const [hours, setHours] = useState("0 Hours");
+
     const [itinerary, setItinerary] = useState({
         title: "",
         desc: "",
@@ -24,10 +27,18 @@ function CityDetails() {
 
     })
     const handleInput = (event) => {
-        setItinerary({
-            ...itinerary,
-            [event.target.name]: event.target.value
-        })
+        if (event.target.name == "duration"){
+            setItinerary({
+                ...itinerary,
+                [event.target.name]: event.target.value + "Hours"
+            })
+        }else{
+            setItinerary({
+                ...itinerary,
+                [event.target.name]: event.target.value
+            })
+        }
+        
     }
     let handlePricePositive = (event) => {
         event.preventDefault();
