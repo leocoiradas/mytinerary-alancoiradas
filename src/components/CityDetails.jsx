@@ -2,7 +2,6 @@ import { useParams, Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { get_details } from "../store/actions/detailsAction";
-useState
 
 function CityDetails() {
 
@@ -15,7 +14,7 @@ function CityDetails() {
             cityId: id
         }))
     }, [dispatch, id]);
-    const [price, setPrice] = useState("💵");
+    const [money, setMoney] = useState("💵");
     const [itinerary, setItinerary] = useState({
         title: "",
         desc: "",
@@ -30,6 +29,21 @@ function CityDetails() {
             [event.target.name]: event.target.value
         })
     }
+    let handlePricePositive = (event) => {
+        event.preventDefault();
+        console.log(money.length)
+        if (money.length < 10){
+            setMoney(money + "💵")
+        }
+        
+    };
+    let handlePriceNegative = (event) => {
+        event.preventDefault();
+        if(money.length >=0){
+            setMoney(money.slice(0, money.length - 2))
+        }
+        
+    };
     console.log(cityDetails)
 
     return (
@@ -112,9 +126,9 @@ function CityDetails() {
                                             <textarea className="w-full min-h-[12rem] p-2 rounded-md" name="desc" id="desc" placeholder="Insert the description of the itinerary here." />
                                             <label htmlFor="price" className="items-start text-white text-xl font-mono">Price</label>
                                             <div className="flex gap-1 w-full">
-                                                <button className="w-24 p-2 text-sm bg-cyan-400 rounded-md hover:bg-purple-400">+1 💵</button>
-                                                <button className="w-24 p-2 bg-cyan-400 rounded-md hover:bg-purple-400">-1 💵</button>
-                                                <input type="text" id="price" className=" w-full p-2 rounded-md" minLength="1" maxLength="5" readonly="readonly" />
+                                                <button onClick={handlePricePositive} className="w-24 p-2 text-sm bg-cyan-400 rounded-md hover:bg-purple-400">+1 💵</button>
+                                                <button onClick={handlePriceNegative} className="w-24 p-2 bg-cyan-400 rounded-md hover:bg-purple-400">-1 💵</button>
+                                                <input type="text" id="price" value={money} className=" w-full p-2 rounded-md" minLength="1" maxLength="5" readonly="readonly" />
                                             </div>
 
                                             <button type="submit" className="bg-cyan-400 hover:bg-purple-400 p-3 rounded-md">Send Itinerary</button>
