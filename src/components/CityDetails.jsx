@@ -99,7 +99,7 @@ function CityDetails() {
                                             <div className="flex gap-1 w-full">
                                                 <button className="w-24 p-2 text-sm bg-cyan-400 rounded-md hover:bg-purple-400">+1 💵</button>
                                                 <button className="w-24 p-2 bg-cyan-400 rounded-md hover:bg-purple-400">-1 💵</button>
-                                                <input type="text" id="price" className=" w-full p-2 rounded-md" readonly="readonly" />
+                                                <input type="text" id="price" className=" w-full p-2 rounded-md" minLength="1" maxLength="5" readonly="readonly" />
                                             </div>
 
                                             <button type="submit" className="bg-cyan-400 hover:bg-purple-400 p-3 rounded-md">Send Itinerary</button>
