@@ -89,15 +89,19 @@ function CityDetails() {
                                         <p className="text-center text-white font-mono text-xl">{user.user}</p>
                                     </div>
                                     <form action="" className="flex flex-col justify-center items-center w-full md:w-2/3 gap-3">
-                                    <h4 className="text-center text-white text-xl font-mono">Create an itinerary</h4>
+                                        <h4 className="text-center text-white text-xl font-mono">Create an itinerary</h4>
                                         <div className="flex flex-col gap-3 justify-center items-start p-2 w-full">
                                             <label htmlFor="title" className="items-start text-white text-xl font-mono">Title</label>
                                             <input type="text" className=" w-full p-2 rounded-md" name="title" id="title" placeholder="Insert the title of the itinerary here." />
                                             <label htmlFor="desc" className="text-start text-white text-xl font-mono">Description</label>
                                             <textarea className="w-full min-h-[12rem] p-2 rounded-md" name="desc" id="desc" placeholder="Insert the description of the itinerary here." />
                                             <label htmlFor="price" className="items-start text-white text-xl font-mono">Price</label>
-                                            <input type="text" id="price" className=" w-full p-2 rounded-md" readonly="readonly"/>
-                                            
+                                            <div className="flex gap-1 w-full">
+                                                <button className="w-24 p-2 text-sm bg-cyan-400 rounded-md hover:bg-purple-400">+1 💵</button>
+                                                <button className="w-24 p-2 bg-cyan-400 rounded-md hover:bg-purple-400">-1 💵</button>
+                                                <input type="text" id="price" className=" w-full p-2 rounded-md" readonly="readonly" />
+                                            </div>
+
                                             <button type="submit" className="bg-cyan-400 hover:bg-purple-400 p-3 rounded-md">Send Itinerary</button>
                                         </div>
 
