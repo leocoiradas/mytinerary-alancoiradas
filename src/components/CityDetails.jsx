@@ -19,7 +19,7 @@ function CityDetails() {
         title: "",
         desc: "",
         price: "",
-        duration: 0,
+        duration: "",
         hashtag: []
 
     })
