@@ -1,7 +1,8 @@
 import { useParams, Link } from "react-router-dom";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { get_details } from "../store/actions/detailsAction";
+useState
 
 function CityDetails() {
 
@@ -14,7 +15,21 @@ function CityDetails() {
             cityId: id
         }))
     }, [dispatch, id]);
+    const [price, setPrice] = useState("💵");
+    const [itinerary, setItinerary] = useState({
+        title: "",
+        desc: "",
+        price: "",
+        duration: "",
+        hashtag: []
 
+    })
+    const handleInput = (event) => {
+        setItinerary({
+            ...itinerary,
+            [event.target.name]: event.target.value
+        })
+    }
     console.log(cityDetails)
 
     return (
