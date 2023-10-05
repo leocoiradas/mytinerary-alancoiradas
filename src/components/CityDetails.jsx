@@ -95,7 +95,8 @@ function CityDetails() {
                                             <input type="text" className=" w-full p-2 rounded-md" name="title" id="title" placeholder="Insert the title of the itinerary here." />
                                             <label htmlFor="desc" className="text-start text-white text-xl font-mono">Description</label>
                                             <textarea className="w-full min-h-[12rem] p-2 rounded-md" name="desc" id="desc" placeholder="Insert the description of the itinerary here." />
-                                            
+                                            <label htmlFor="price" className="items-start text-white text-xl font-mono">Price</label>
+                                            <input type="text" id="price" className=" w-full p-2 rounded-md" readonly="readonly"/>
                                             
                                             <button type="submit" className="bg-cyan-400 hover:bg-purple-400 p-3 rounded-md">Send Itinerary</button>
                                         </div>
