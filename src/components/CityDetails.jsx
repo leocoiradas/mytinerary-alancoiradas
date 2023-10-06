@@ -16,14 +16,14 @@ function CityDetails() {
     }, [dispatch, id]);
 
     const [money, setMoney] = useState("");
-    const [hours, setHours] = useState("0");
+    
 
     const [itinerary, setItinerary] = useState({
         title: "",
         desc: "",
         price: "",
         duration: 1,
-        hashtags: []
+        hashtags: ""
 
     })
     const handleInput = (event) => {
@@ -39,6 +39,11 @@ function CityDetails() {
                   ...prevItinerary,
                   [event.target.name]: money,
                 };
+                case "hashtags":
+                    return{
+                        ...prevItinerary,
+                        [event.target.name]: event.target.value.split(" ")
+                    }
               default:
                 return {
                   ...prevItinerary,
@@ -213,7 +218,7 @@ function CityDetails() {
                                             <label htmlFor="duration" className="items-start text-white text-xl font-mono">Duration</label>
                                             <input type="number" name="duration" id="duration" onChange={handleInput} min={1} className=" w-full p-2 rounded-md" required />
                                             <label htmlFor="hashtags" className="items-start text-white text-xl font-mono">Hashtags</label>
-                                            <input type="text" id="hashtags" onChange={handleInput} className=" w-full p-2 rounded-md" required />
+                                            <input type="text" id="hashtags" name="hashtags" onChange={handleInput} className=" w-full p-2 rounded-md" required />
                                             <button type="submit" className="bg-cyan-400 hover:bg-purple-400 p-3 rounded-md">Send Itinerary</button>
                                         </div>
 
