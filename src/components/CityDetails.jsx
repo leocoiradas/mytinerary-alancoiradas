@@ -15,47 +15,116 @@ function CityDetails() {
         }))
     }, [dispatch, id]);
 
-    const [money, setMoney] = useState("💵");
-    const [hours, setHours] = useState("0 Hours");
+    const [money, setMoney] = useState("");
+    const [hours, setHours] = useState("0");
 
     const [itinerary, setItinerary] = useState({
         title: "",
         desc: "",
         price: "",
-        duration: "",
-        hashtag: []
+        duration: 1,
+        hashtags: []
 
     })
     const handleInput = (event) => {
-        if (event.target.name == "duration"){
+        setItinerary((prevItinerary) => {
+            switch (event.target.name) {
+              case "duration":
+                return {
+                  ...prevItinerary,
+                  [event.target.name]: event.target.value + " Hours",
+                };
+              case "price":
+                return {
+                  ...prevItinerary,
+                  [event.target.name]: money,
+                };
+              default:
+                return {
+                  ...prevItinerary,
+                  [event.target.name]: event.target.value,
+                };
+            }
+          });
+        /*if (event.target.name == "duration") {
             setItinerary({
                 ...itinerary,
-                [event.target.name]: event.target.value + "Hours"
+                [event.target.name]: event.target.value + " Hours"
             })
-        }else{
+        } else {
             setItinerary({
                 ...itinerary,
                 [event.target.name]: event.target.value
             })
-        }
-        
+        }*/
+    
     }
-    let handlePricePositive = (event) => {
+    console.log(itinerary)
+    console.log(itinerary.price.length)
+    /*let handlePricePositive = (event) => {
         event.preventDefault();
         console.log(money.length)
-        if (money.length < 10){
+        if (money.length < 10) {
             setMoney(money + "💵")
         }
-        
+        event.preventDefault();
+        if (money.length < 10) {
+            setMoney(money + "💵");
+            const currentPrice = parseFloat(itinerary.price || 0);
+            setItinerary((prevItinerary) => ({
+                ...prevItinerary,
+                price: (currentPrice + 1).toString(),
+            }));
+        }
+        console.log(money)
     };
     let handlePriceNegative = (event) => {
         event.preventDefault();
-        if(money.length >=0){
+        if (money.length >= 0) {
             setMoney(money.slice(0, money.length - 2))
         }
-        
+
+    };*/
+    /*const handlePricePositive = (event) => {
+        event.preventDefault();
+        setItinerary((prevItinerary) => ({
+            ...prevItinerary,
+            price: prevItinerary.price + "💵"
+        }));
     };
-    console.log(cityDetails)
+    
+    const handlePriceNegative = (event) => {
+        event.preventDefault();
+        if (itinerary.price.length > 0) {
+            setItinerary((prevItinerary) => ({
+                ...prevItinerary,
+                price: prevItinerary.price.slice(0, prevItinerary.price.length - 1)
+            }));
+        }
+    };*/
+
+    const handlePricePositive = (event) => {
+        event.preventDefault();
+        if (itinerary.price.length / 2 < 5) { // Verifica que no haya más de 5 emojis de billetes
+            setItinerary((prevItinerary) => ({
+                ...prevItinerary,
+                price: prevItinerary.price + "💵"
+            }));
+        }
+    };
+    
+    const handlePriceNegative = (event) => {
+        event.preventDefault();
+        if (itinerary.price.length > 0) {
+            setItinerary((prevItinerary) => ({
+                ...prevItinerary,
+                price: prevItinerary.price.slice(0, prevItinerary.price.length - 2)
+            }));
+        }
+    };
+    
+    
+    //console.log(cityDetails)
 
     return (
         <section className="min-h-[80vh] p-10 flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500">
@@ -132,19 +201,19 @@ function CityDetails() {
                                         <h4 className="text-center text-white text-xl font-mono">Create an itinerary</h4>
                                         <div className="flex flex-col gap-3 justify-center items-start p-2 w-full">
                                             <label htmlFor="title" className="items-start text-white text-xl font-mono">Title</label>
-                                            <input type="text" className=" w-full p-2 rounded-md" name="title" id="title" placeholder="Insert the title of the itinerary here." />
+                                            <input type="text" onChange={handleInput} className=" w-full p-2 rounded-md" name="title" id="title" placeholder="Insert the title of the itinerary here." />
                                             <label htmlFor="desc" className="text-start text-white text-xl font-mono">Description</label>
-                                            <textarea className="w-full min-h-[12rem] p-2 rounded-md" name="desc" id="desc" placeholder="Insert the description of the itinerary here." required />
+                                            <textarea onChange={handleInput} className="w-full min-h-[12rem] p-2 rounded-md" name="desc" id="desc" placeholder="Insert the description of the itinerary here." required />
                                             <label htmlFor="price" className="items-start text-white text-xl font-mono">Price</label>
                                             <div className="flex gap-1 w-full">
                                                 <button onClick={handlePricePositive} className="w-24 p-2 text-sm bg-cyan-400 rounded-md hover:bg-purple-400">+1 💵</button>
                                                 <button onClick={handlePriceNegative} className="w-24 p-2 bg-cyan-400 rounded-md hover:bg-purple-400">-1 💵</button>
-                                                <input type="text" id="price" value={money} className=" w-full p-2 rounded-md" minLength="1" maxLength="5" readonly="readonly" required />
+                                                <input type="text" id="price" name="price" onChange={handleInput} value={itinerary.price} className=" w-full p-2 rounded-md"  required />
                                             </div>
                                             <label htmlFor="duration" className="items-start text-white text-xl font-mono">Duration</label>
-                                            <input type="number" id="duration" className=" w-full p-2 rounded-md" required />
+                                            <input type="number" name="duration" id="duration" onChange={handleInput} min={1} className=" w-full p-2 rounded-md" required />
                                             <label htmlFor="hashtags" className="items-start text-white text-xl font-mono">Hashtags</label>
-                                            <input type="text" id="hashtags" className=" w-full p-2 rounded-md" required />
+                                            <input type="text" id="hashtags" onChange={handleInput} className=" w-full p-2 rounded-md" required />
                                             <button type="submit" className="bg-cyan-400 hover:bg-purple-400 p-3 rounded-md">Send Itinerary</button>
                                         </div>
 
