@@ -3,7 +3,7 @@ import { data } from "autoprefixer";
 import axios from "axios";
 
 export const user_photo = createAction('user_photo', (obj) => {
-    console.log(obj)
+
 
     return {
         payload: {
@@ -17,7 +17,6 @@ export const user_login = createAsyncThunk('user_login', async (obj) => {
         const { data } = await axios.post('http://localhost:7000/api/auth/signin', obj.data);
         localStorage.setItem('token', data.token)
         localStorage.setItem('user', JSON.stringify(data.user))
-
         return {
             user: data.user,
             token: data.token
@@ -49,8 +48,6 @@ export const google_signin = createAsyncThunk('google_signin', async (obj) => {
     try {
 
         const { data } = await axios.post('http://localhost:7000/api/auth/google', obj);
-
-        //console.log(data)
 
         localStorage.setItem('token', data.response.token);
         localStorage.setItem('user', JSON.stringify(data.response.user));
@@ -96,7 +93,8 @@ export const user_logout = createAsyncThunk('user_logout', async () => {
     }
 })
 
-export const user_token = createAction('user_token', (user) => {
+export const user_token = createAction('user_token', () => {
+    const user = JSON.parse(localStorage.getItem('user'));
     return {
         payload: {
             user
