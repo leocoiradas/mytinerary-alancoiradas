@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { get_details } from "../store/actions/detailsAction";
+import CreateItinerary from "./CreateItinerary";
 
 function CityDetails() {
 
@@ -15,7 +16,7 @@ function CityDetails() {
         }))
     }, [dispatch, id]);
 
-    const [money, setMoney] = useState("");
+    /*const [money, setMoney] = useState("");
     
 
     const [itinerary, setItinerary] = useState({
@@ -25,8 +26,8 @@ function CityDetails() {
         duration: 1,
         hashtags: ""
 
-    })
-    const handleInput = (event) => {
+    })*/
+    /*const handleInput = (event) => {
         setItinerary((prevItinerary) => {
             switch (event.target.name) {
               case "duration":
@@ -51,21 +52,11 @@ function CityDetails() {
                 };
             }
           });
-        /*if (event.target.name == "duration") {
-            setItinerary({
-                ...itinerary,
-                [event.target.name]: event.target.value + " Hours"
-            })
-        } else {
-            setItinerary({
-                ...itinerary,
-                [event.target.name]: event.target.value
-            })
-        }*/
     
     }
     console.log(itinerary)
-    console.log(itinerary.price.length)
+    console.log(itinerary.price.length)*/
+
     /*let handlePricePositive = (event) => {
         event.preventDefault();
         console.log(money.length)
@@ -108,7 +99,7 @@ function CityDetails() {
         }
     };*/
 
-    const handlePricePositive = (event) => {
+    /*const handlePricePositive = (event) => {
         event.preventDefault();
         if (itinerary.price.length / 2 < 5) { // Verifica que no haya más de 5 emojis de billetes
             setItinerary((prevItinerary) => ({
@@ -126,7 +117,7 @@ function CityDetails() {
                 price: prevItinerary.price.slice(0, prevItinerary.price.length - 2)
             }));
         }
-    };
+    };*/
     
     
     //console.log(cityDetails)
@@ -194,8 +185,8 @@ function CityDetails() {
                             ) : (
                                 <p>Loading itineraries</p>
                             )}
-                            {user ?
-                                <section className="md:w-[75vw] flex flex-wrap justify-center items-center bg-slate-800 rounded-md border-2 border-black p-5 gap-5">
+                            {user ? <CreateItinerary />
+                                /*<section className="md:w-[75vw] flex flex-wrap justify-center items-center bg-slate-800 rounded-md border-2 border-black p-5 gap-5">
                                     <div className="  flex flex-1 flex-col justify-center items-center gap-5">
                                         <div className="w-24 h-24 md:w-36 md:h-36">
                                             <img src={user.image} className="rounded-full md:rounded object-cover w-full h-full" />
@@ -223,7 +214,8 @@ function CityDetails() {
                                         </div>
 
                                     </form>
-                                </section>
+                                    <CreateItinerary />
+                                </section>*/
                                 : null}
                         </div>
                     </div>
