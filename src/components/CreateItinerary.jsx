@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { create_itinerary } from "../store/actions/itineraryAction";
 
-
 function CreateItinerary() {
-
     const dispatch = useDispatch()
+
+    const user = useSelector(store => store.userReducer.user);
+    let cityDetails = useSelector(store => store.detailsReducer.cityDetails);
 
     const [money, setMoney] = useState("");
 
-    const [itinerary, setItinerary] = useState({
+    let [itinerary, setItinerary] = useState({
+        user: user._id,
+        city: "",
         title: "",
         desc: "",
         price: "",
@@ -18,7 +21,12 @@ function CreateItinerary() {
 
     })
 
-    const user = useSelector(store => store.userReducer.user);
+    useEffect(() => {
+        setItinerary(prevItinerary => ({
+            ...prevItinerary,
+            city: cityDetails._id
+        }));
+    }, [cityDetails]);
 
     const handleInput = (event) => {
         setItinerary((prevItinerary) => {
@@ -47,11 +55,11 @@ function CreateItinerary() {
         });
     }
     console.log(itinerary)
-    console.log(itinerary.price.length)
+    //console.log(itinerary.price.length)
 
     const handlePricePositive = (event) => {
         event.preventDefault();
-        if (itinerary.price.length / 2 < 5) { // Verifica que no haya más de 5 emojis de billetes
+        if (itinerary.price.length / 2 < 5) {
             setItinerary((prevItinerary) => ({
                 ...prevItinerary,
                 price: prevItinerary.price + "💵"
@@ -70,15 +78,13 @@ function CreateItinerary() {
     };
 
     const handleItinerary = async (event) => {
-            event.preventDefault();
-            try {
-                dispatch(create_itinerary({
-                    obj: itinerary
-                }))
-            } catch (error) {
-                console.log(error)
-            }
-        
+        event.preventDefault();
+        try {
+            dispatch(create_itinerary(itinerary))
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 
 
