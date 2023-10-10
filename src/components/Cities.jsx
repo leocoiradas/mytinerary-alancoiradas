@@ -20,7 +20,7 @@ function Cities() {
         
     }
     return (
-        <main className='flex flex-col justify-center items-center min-h-[80vh] w-full pt-10 gap-3'>
+        <main className='flex flex-col justify-center items-center min-h-[80vh] w-full pt-10 gap-3 bg-gradient-to-r from-cyan-500 to-blue-500'>
            <h2 className='text-3xl font-medium font-sans'>Cities</h2>
             <section className='flex flex-col items-center justify-center p-3 gap-10 w-[75vw]'>
             <input onChange={handleInputChange} ref={inputSearch} className='border-2 rounded-md py-1 px-2 w-3/4 border-slate-950' type='text' placeholder='Write the city name here.' />
