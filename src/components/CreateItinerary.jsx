@@ -54,7 +54,7 @@ function CreateItinerary() {
             }
         });
     }
-    console.log(itinerary)
+    //console.log(itinerary)
     //console.log(itinerary.price.length)
 
     const handlePricePositive = (event) => {
@@ -81,6 +81,7 @@ function CreateItinerary() {
         event.preventDefault();
         try {
             dispatch(create_itinerary(itinerary))
+            window.location.reload();
         } catch (error) {
             console.log(error)
         }
