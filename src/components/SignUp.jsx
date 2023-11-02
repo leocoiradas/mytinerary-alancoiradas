@@ -37,8 +37,8 @@ function SignUp() {
         }
     }
     return (
-        <main className="min-h-[80vh]  flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500">
-            <section className="flex flex-col justify-center items-center rounded-md border-2 border-black w-[75vw] lg:w-[35vw] gap-4 p-4">
+        <main className="min-h-[80vh]  flex justify-center items-center bg-gradient-to-r from-cyan-500 to-blue-500 p-5">
+            <section className="flex flex-col justify-center items-center rounded-md border-2 border-black w-[75vw] lg:w-[35vw] backdrop-blur-md bg-white/60 gap-4 p-4">
                 <h2 className="text-2xl font-sans font-bold">Sign Up</h2>
                 <p className="text-xl text-center">Sign up to create an account and enjoy all the stuff our platflorm have to offer.</p>
                 <form className=" flex flex-col justify-center items-start gap-3 p-3 w-full">
