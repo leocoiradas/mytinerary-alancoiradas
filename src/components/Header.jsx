@@ -23,7 +23,8 @@ function Header() {
                 <div className={`${isOpen ? 'block mt-4 rounded-md border-white w-full p-3' : 'md:flex'}`}>
                     <NavBar isOpen={isOpen} user={user} />
                 </div>
-                <img className='w-[65px] h-[65px] rounded-full object-cover hidden md:block ml-3' src={user ? user.image : defaultPhoto} alt="" />
+                {user ? <img className='w-[65px] h-[65px] rounded-full object-cover hidden md:block ml-3' src={user.image} alt={user.name} /> : null }
+                
             </div>
         </header>
 
